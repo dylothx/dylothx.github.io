@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        #bigpic {
+            display: none;
+        }
+        #bigpic1 {
+            display: none;
+        }
+        img {
+            display: block; /* Ensures the image takes up the full width */
+            margin: 0; /* Remove default margin */
+
+        }
+        .image-container-right {
+            position: fixed; /* Keeps the container fixed on the screen */
+            width:200px;
+            top: 0; /* Aligns it to the top */
+            right: 0; /* Aligns it to the right border */
+            height: 100%; /* Takes full height of the viewport */
+            display: flex; /* Enables flex layout for stacking images */
+            flex-direction: column; /* Stacks images vertically */
+            align-items: flex-end; /* Aligns images to the right */
+            gap: 2px; /* Adds spacing between images */
+            padding: 10px; /* Optional padding for better readability */
+        }
+        .image-container-left {
+            position: fixed; /* Keeps the container fixed on the screen */
+            width:200px;
+            top: 0; /* Aligns it to the top */
+            left: 0; 
+            height: 100%; /* Takes full height of the viewport */
+            display: flex; /* Enables flex layout for stacking images */
+            flex-direction: column; /* Stacks images vertically */
+            align-items: flex-start; /* Aligns images to the right */
+            gap: 2px; /* Adds spacing between images */
+            padding: 10px; /* Optional padding for better readability */
+        }
+        .image {
+            max-width: 100%; /* Adjust image width as needed */
+            margin-bottom: 5px; /* Add spacing between images */
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+       
+        .right-image {
+            right: 0;
+            position: absolute;
+            
+        }
+        .right-images {
+            right: 0;
+            position: absolute;
+        }
+        .left-image {
+            left: 0; /* Align with the left edge */
+            position: relative;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fa50a570;
+            text-align: center;
+        }
+        .heart {
+            background-color: red;
+            display: none;
+            height: 50px;
+            margin: 0 10px;
+            position: relative;
+            top: 0;
+            transform: rotate(-45deg);
+            position: absolute;
+            left: 47.2%;
+            top: 45%;
+            width: 50px;
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+        }
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+        h1 {
+            color: #ff0066;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .button-1 {
+        background-color: #EA4C89;
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+        padding: 10px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: color 100ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        }
+
+        .button-1:hover,
+        .button-1:focus {
+        background-color: #F082AC;
+        }
+        
+        .button-2 {
+        background-color: #01862d;
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+        padding: 10px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: color 100ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        }
+
+        .button-2:hover,
+        .button-2:focus {
+        background-color: #17f131;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day!</h1>
+    <div class="heart"></div>
+    <p>you are my sunshine. ❤️</p>
+    <p>will you be my valentines? hehe</p>
+    <button class="button-2" type="button" onclick="displayThankYou(),showYesPicture(),hideNoPicture()">Yes</button>
+    <button class="button-1" type="button" onclick="displayGoodbye(),showNoPicture(),hideYesPicture()">No</button>
+    <p id="message"></p><img id="bigpic" src="" class="center" style="width: 10%;" alt="Large Picture"><img id="bigpic1" src="" style="width: 10%" class="center" alt="Large Picture">
+
+    <script>
+        function displayThankYou() {
+            document.getElementById('message').textContent = 'thank you! lubu bb hehe❤️❤️❤️';
+            //document.querySelector('.heart').style.display = 'block'; // Show the heart
+        }
+
+        function displayGoodbye() {
+            document.getElementById('message').textContent = 'NO! pls click yes';
+            document.querySelector('.heart').style.display = 'none'; // Hide the heart
+        }
+    </script>
+    <script>
+        function showYesPicture() {
+            // Replace with the actual image URL
+            var sourceOfPicture = "static/images/love.gif";
+            var img = document.getElementById('bigpic');
+            img.src = sourceOfPicture;
+            img.style.display = "block"; // Show the image
+        }
+        function hideYesPicture() {
+            var img = document.getElementById('bigpic');
+            img.style.display = "none"; // Hide the image
+        }
+        function showNoPicture() {
+            // Replace with the actual image URL
+            var sourceOfPicture = "static/images/cry.PNG";
+            var img = document.getElementById('bigpic1');
+            img.src = sourceOfPicture;
+            img.style.display = "block"; // Show the image
+        }
+        function hideNoPicture() {
+            var img = document.getElementById('bigpic1');
+            img.style.display = "none"; // Hide the image
+        }
+    </script>
+    
+    <div class="image-container-right">
+        <img src="static/images/photo3.JPG" style="width:60%" alt="Left Image" class="image">
+        <img src="static/images/photo5.jpg" alt="Your Image" style="width:60%" class="image">
+        <img src="static/images/photo4.jpg" alt="Your Image" style="width:60%" class="image">
+        <img src="static/images/photo2.jpg" alt="Your Image" style="width:60%" class="image">
+        <img src="static/images/photo1.jpg" alt="Your Image" style="width:60%" class="image">
+    </div>
+    <div class="image-container-left">
+        <img src="static/images/photo10.JPG" style="width:60%" alt="Left Image" class="image">
+        <img src="static/images/photo9.jpg" alt="Your Image" style="width:60%" class="image">
+        <img src="static/images/photo8.jpg" alt="Your Image" style="width:60%" class="image">
+        <img src="static/images/photo7.jpg" alt="Your Image" style="width:60%" class="image">
+        <img src="static/images/photo6.jpg" alt="Your Image" style="width:60%" class="image">
+    </div>
+    <div class="footer">© dillontanhongxun 2024</div>
+    
+    
+</body>
+</html>
