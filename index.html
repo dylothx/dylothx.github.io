@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day</title>
     <style>
+        #moving-button {
+            position: absolute;
+            top: 23.9%;
+            transform: translateY(-50%); /* Center vertically */
+        }
         #bigpic {
             display: none;
         }
@@ -189,7 +194,7 @@
     <p>you are my sunshine. ❤️</p>
     <p>will you be my valentines? hehe</p>
     <button class="button-2" type="button" onclick="displayThankYou(),showYesPicture(),hideNoPicture()">Yes</button>
-    <button class="button-1" type="button" onclick="displayGoodbye(),showNoPicture(),hideYesPicture()">No</button>
+    <button class="button-1" id="moving-button" type="button" onclick="displayGoodbye(),showNoPicture(),hideYesPicture()">No</button>
     <p id="message"></p><img id="bigpic" src="" class="center" style="width: 10%;" alt="Large Picture"><img id="bigpic1" src="" style="width: 10%" class="center" alt="Large Picture">
 
     <script>
@@ -226,6 +231,11 @@
             var img = document.getElementById('bigpic1');
             img.style.display = "none"; // Hide the image
         }
+        const button = document.getElementById("moving-button");
+        button.addEventListener("mouseenter", () => {
+            const randomOffset = Math.random() * 300 - 150; // Random offset between -100px and 100px
+            button.style.top = `calc(50% + ${randomOffset}px)`;
+        });
     </script>
     
     <div class="image-container-right">
