@@ -27,6 +27,7 @@
             align-items: flex-end; /* Aligns images to the right */
             gap: 2px; /* Adds spacing between images */
             padding: 10px; /* Optional padding for better readability */
+            z-index: -1;
         }
         .image-container-left {
             position: fixed; /* Keeps the container fixed on the screen */
@@ -39,6 +40,7 @@
             align-items: flex-start; /* Aligns images to the right */
             gap: 2px; /* Adds spacing between images */
             padding: 10px; /* Optional padding for better readability */
+            z-index: -1;
         }
         .image {
             max-width: 100%; /* Adjust image width as needed */
@@ -131,6 +133,7 @@
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
+        overflow: hidden;
         }
 
         .button-1:hover,
@@ -163,6 +166,7 @@
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
+        overflow: hidden;
         }
 
         .button-2:hover,
@@ -175,6 +179,7 @@
             left: 0;
             width: 100%;
             text-align: center;
+            z-index: -1;
         }
     </style>
 </head>
